@@ -11,7 +11,7 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 print("[INFO] camera sensor warming up...")
-vs = VideoStream(0, framerate = 30).start()
+vs = VideoStream(0).start()
 time.sleep(2.0)
 glass = cv2.imread("data/glass5.png", cv2.IMREAD_UNCHANGED)
 moustache = cv2.imread("data/moustache.png", cv2.IMREAD_UNCHANGED)
@@ -83,7 +83,7 @@ while True:
         break
 
     # show the frame
-    cv2.imshow("Frame", frame)
+    cv2.imshow("Face Mask", frame)
 
 # do a bit of cleanup
 cv2.destroyAllWindows()
